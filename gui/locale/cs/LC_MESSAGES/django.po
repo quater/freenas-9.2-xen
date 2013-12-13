@@ -7848,3 +7848,32 @@ msgstr "Architektura pluginu"
 #, fuzzy
 msgid "Plugin Kernel Module"
 msgstr "Plugin povolen"
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4 síťová maska"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "IPv4 addresa"
+
+#: jails/models.py:134
+#, fuzzy
+msgid "IPv6 prefix length"
+msgstr "Délka IPv6 přípony"
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "Délka IPv6 přípony"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "Tato IP je již používaná."

@@ -8505,3 +8505,32 @@ msgstr "Arhitektura dodatne komponente"
 #, fuzzy
 msgid "Plugin Kernel Module"
 msgstr "Dodatna komponenta omogućena"
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4 maska mreže"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "IPv4 Addresa"
+
+#: jails/models.py:134
+#, fuzzy
+msgid "IPv6 prefix length"
+msgstr "IPv6 dužina prefiksa"
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "IPv6 dužina prefiksa"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "Ova IP adresa je već u upotrebi."

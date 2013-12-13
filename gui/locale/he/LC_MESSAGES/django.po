@@ -8735,3 +8735,31 @@ msgstr "ארכיון"
 #: plugins/models.py:141
 msgid "Plugin Kernel Module"
 msgstr ""
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4 Netmask"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "כתובת IPv4"
+
+#: jails/models.py:134
+msgid "IPv6 prefix length"
+msgstr ""
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "כתובת IPv4"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "קבוצה עם ה gid הזה כבר קיימת"

@@ -8928,3 +8928,32 @@ msgstr "Αρχιτεκτονική πρόσθετου"
 #, fuzzy
 msgid "Plugin Kernel Module"
 msgstr "Πρόσθετο ενεργοποιημένο"
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4 μάσκα δικτύου"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "IPv4 διεύθυνση"
+
+#: jails/models.py:134
+#, fuzzy
+msgid "IPv6 prefix length"
+msgstr "Μήκος προθέματος του IPv6"
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "Μήκος προθέματος του IPv6"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "Αυτή η διεύθυνση IP χρησιμοποιείται ήδη."

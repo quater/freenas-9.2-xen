@@ -7619,3 +7619,32 @@ msgstr ""
 #: plugins/models.py:141
 msgid "Plugin Kernel Module"
 msgstr ""
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4-netmaske"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "IPv4-adresse"
+
+#: jails/models.py:134
+#, fuzzy
+msgid "IPv6 prefix length"
+msgstr "IPv6 Præfiks længde"
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "IPv6 Præfiks længde"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "En bruger med dette brugernavn findes allerede."

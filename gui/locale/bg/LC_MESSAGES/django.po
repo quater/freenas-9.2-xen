@@ -8204,3 +8204,31 @@ msgstr "Архив"
 #: plugins/models.py:141
 msgid "Plugin Kernel Module"
 msgstr ""
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4 мрежова маска"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "IPv4 адрес"
+
+#: jails/models.py:134
+msgid "IPv6 prefix length"
+msgstr ""
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "IPv6 адрес"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "Вече съществува група с такъв групов номер (GID)."

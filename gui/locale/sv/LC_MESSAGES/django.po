@@ -8516,3 +8516,32 @@ msgstr "Insticksmodulens arkitektur"
 #, fuzzy
 msgid "Plugin Kernel Module"
 msgstr "Insticksmodul aktiverad"
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "IPv4-nätmask"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "IPv4-adress"
+
+#: jails/models.py:134
+#, fuzzy
+msgid "IPv6 prefix length"
+msgstr "IPv6 Prefix Längd"
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "IPv6 Prefix Längd"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "Denna IP är redan i bruk"

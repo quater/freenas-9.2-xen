@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-02 02:07+0000\n"
-"PO-Revision-Date: 2013-12-06 12:44+0000\n"
+"PO-Revision-Date: 2013-12-12 15:01+0000\n"
 "Last-Translator: mav <mav@freebsd.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1386333888.0\n"
+"X-POOTLE-MTIME: 1386860518.0\n"
 
 # Альтернатива SSL/TLS
 #: choices.py:43
@@ -8772,3 +8772,27 @@ msgstr "Архитектура"
 #: plugins/models.py:141
 msgid "Plugin Kernel Module"
 msgstr "Модуль ядра плагина"
+
+#: jails/models.py:90
+msgid "IPv4 netmask"
+msgstr "Маска сети IPv4"
+
+#: jails/models.py:109
+msgid "IPv4 bridge netmask"
+msgstr "Маска сети IPv4 bridge"
+
+#: jails/models.py:134
+msgid "IPv6 prefix length"
+msgstr "Длина префикса IPv6"
+
+#: jails/models.py:153
+msgid "IPv6 bridge prefix length"
+msgstr "Длина префикса IPv6 bridge"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr "Невозможно установить репозиторий: %s"
+
+#: services/forms.py:1446
+msgid "This IP and port are already in use."
+msgstr "Этот IP и порт уже используются."

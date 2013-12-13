@@ -8679,3 +8679,31 @@ msgstr ""
 #, fuzzy
 msgid "Plugin Kernel Module"
 msgstr "Włącz plugin"
+
+#: jails/models.py:90
+#, fuzzy
+msgid "IPv4 netmask"
+msgstr "Maska IPv4"
+
+#: jails/models.py:109
+#, fuzzy
+msgid "IPv4 bridge netmask"
+msgstr "Adres IPv4"
+
+#: jails/models.py:134
+msgid "IPv6 prefix length"
+msgstr ""
+
+#: jails/models.py:153
+#, fuzzy
+msgid "IPv6 bridge prefix length"
+msgstr "Adres IPv6"
+
+#: plugins/forms.py:215
+msgid "Unable to set repository: %s"
+msgstr ""
+
+#: services/forms.py:1446
+#, fuzzy
+msgid "This IP and port are already in use."
+msgstr "To IP jest już używane."
