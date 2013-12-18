@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-02 02:06+0000\n"
-"PO-Revision-Date: 2013-09-29 23:42+0000\n"
-"Last-Translator: Tonnes <tonnes.mb@gmail.com>\n"
+"PO-Revision-Date: 2013-12-17 08:46+0000\n"
+"Last-Translator: Christian <c.helmus@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1380498177.0\n"
+"X-POOTLE-MTIME: 1387270019.0\n"
 
 #: choices.py:43
 msgid "Plain"
@@ -41,9 +41,8 @@ msgid "HTTPS"
 msgstr "HTTPS"
 
 #: choices.py:52
-#, fuzzy
 msgid "HTTP+HTTPS"
-msgstr "HTTPS"
+msgstr "HTTP+HTTPS"
 
 #: choices.py:56 choices.py:235
 msgid "Auto"
@@ -231,15 +230,17 @@ msgstr "zondag"
 
 #: choices.py:165
 msgid "Unencrypted"
-msgstr ""
+msgstr "Onversleuteld"
 
 #: choices.py:166
+#, fuzzy
 msgid "Encrypted, no passphrase"
-msgstr ""
+msgstr "Versleuteld, geen passphrase"
 
 #: choices.py:167
+#, fuzzy
 msgid "Encrypted, with passphrase"
-msgstr ""
+msgstr "Versleuteld, met passphrase"
 
 #: choices.py:173
 msgid "Anonymous"
@@ -347,9 +348,8 @@ msgid "Off"
 msgstr "Uit"
 
 #: choices.py:304
-#, fuzzy
 msgid "lz4 (recommended)"
-msgstr "lzjb (aanbevolen)"
+msgstr "lz4 (aanbevolen)"
 
 #: choices.py:305
 msgid "gzip (default level, 6)"
@@ -364,13 +364,14 @@ msgid "gzip (maximum, slow)"
 msgstr "gzip (maximum, traag)"
 
 #: choices.py:308
+#, fuzzy
 msgid "zle (runs of zeros)"
-msgstr ""
+msgstr "zle (runs of zeros)"
 
 #: choices.py:309
 #, fuzzy
 msgid "lzjb (legacy, not recommended)"
-msgstr "lzjb (aanbevolen)"
+msgstr "lzjb (legacy, niet aanbevolen)"
 
 #: choices.py:538
 msgid "Hour(s)"
@@ -416,7 +417,7 @@ msgstr "Lezen en Schrijven"
 
 #: choices.py:560
 msgid "Verify"
-msgstr ""
+msgstr "Verifieer"
 
 #: choices.py:569 choices.py:570 choices.py:571 choices.py:572
 #, python-format
@@ -480,23 +481,23 @@ msgstr "Onmiddelijke Offline Test (Alleen ATA)"
 
 #: choices.py:600
 msgid "9600"
-msgstr ""
+msgstr "9600"
 
 #: choices.py:601
 msgid "19200"
-msgstr ""
+msgstr "19200"
 
 #: choices.py:602
 msgid "38400"
-msgstr ""
+msgstr "38400"
 
 #: choices.py:603
 msgid "57600"
-msgstr ""
+msgstr "57600"
 
 #: choices.py:604
 msgid "115200"
-msgstr ""
+msgstr "115200"
 
 #: choices.py:633
 msgid "Rsync module"
@@ -520,7 +521,7 @@ msgstr "Stil"
 
 #: choices.py:659
 msgid "Fatal"
-msgstr ""
+msgstr "Fataal"
 
 #: choices.py:660 middleware/zfs.py:540 storage/models.py:136
 #: storage/models.py:760 storage/models.py:768
@@ -533,21 +534,21 @@ msgstr "Informatie"
 
 #: choices.py:662
 msgid "Verbose"
-msgstr ""
+msgstr "Uitgebreid"
 
 #: choices.py:664
 #, fuzzy
 msgid "Debug2"
-msgstr "Foutopsporing"
+msgstr "Foutopsporing2"
 
 #: choices.py:665
 #, fuzzy
 msgid "Debug3"
-msgstr "Foutopsporing"
+msgstr "Foutopsporing3"
 
 #: choices.py:670
 msgid "Daemon"
-msgstr ""
+msgstr "Daemon"
 
 #: choices.py:671 account/models.py:159 account/models.py:237
 #: services/models.py:699 services/models.py:1790 system/models.py:375
@@ -557,47 +558,39 @@ msgstr "Gebruiker"
 
 #: choices.py:672
 msgid "Auth"
-msgstr ""
+msgstr "Auth"
 
 #: choices.py:673
-#, fuzzy
 msgid "Local 0"
-msgstr "Lokale Gebruiker"
+msgstr "Local 0"
 
 #: choices.py:674
-#, fuzzy
 msgid "Local 1"
-msgstr "Lokale Gebruiker"
+msgstr "Local 1"
 
 #: choices.py:675
-#, fuzzy
 msgid "Local 2"
-msgstr "Lokale Gebruiker"
+msgstr "Local 2"
 
 #: choices.py:676
-#, fuzzy
 msgid "Local 3"
-msgstr "Lokale Gebruiker"
+msgstr "Local 3"
 
 #: choices.py:677
-#, fuzzy
 msgid "Local 4"
-msgstr "Lokale Gebruiker"
+msgstr "Local 4"
 
 #: choices.py:678
-#, fuzzy
 msgid "Local 5"
-msgstr "Lokale Gebruiker"
+msgstr "Local 5"
 
 #: choices.py:679
-#, fuzzy
 msgid "Local 6"
-msgstr "Lokale Gebruiker"
+msgstr "Local 6"
 
 #: choices.py:680
-#, fuzzy
 msgid "Local 7"
-msgstr "Lokale Gebruiker"
+msgstr "Local 7"
 
 #: choices.py:684 services/models.py:1577 services/models.py:1578
 msgid "Active Directory"
@@ -609,12 +602,11 @@ msgstr "LDAP"
 
 #: choices.py:686
 msgid "NT4"
-msgstr ""
+msgstr "NT4"
 
 #: choices.py:687
-#, fuzzy
 msgid "NIS"
-msgstr "NIC"
+msgstr "NIS"
 
 #: choices.py:692
 msgid "type1"
@@ -637,42 +629,40 @@ msgid "type5"
 msgstr ""
 
 #: choices.py:702
-#, fuzzy
 msgid "on"
-msgstr "Geen"
+msgstr "aan"
 
 #: choices.py:703
-#, fuzzy
 msgid "off"
-msgstr "Uit"
+msgstr "uit"
 
 #: choices.py:704
 msgid "data"
-msgstr ""
+msgstr "gegevens"
 
 #: choices.py:705
 msgid "!data"
-msgstr ""
+msgstr "!gegevens"
 
 #: choices.py:706
 msgid "auth"
-msgstr ""
+msgstr "auth"
 
 #: choices.py:707
 msgid "ctrl"
-msgstr ""
+msgstr "ctrl"
 
 #: choices.py:708
 msgid "ctrl+data"
-msgstr ""
+msgstr "ctrl+gegevens"
 
 #: choices.py:709
 msgid "ctrl+!data"
-msgstr ""
+msgstr "ctrl+!gegevens"
 
 #: choices.py:710
 msgid "auth+data"
-msgstr ""
+msgstr "auth+gegevens"
 
 #: choices.py:711
 msgid "auth+!data"
@@ -999,12 +989,12 @@ msgstr "Elke %s dagen"
 #: api/resources.py:865
 #, python-format
 msgid "From %(begin)s through %(end)s, %(repeat)s"
-msgstr ""
+msgstr "Van %(begin)s through %(end)s, %(repeat)s"
 
 #: common/system.py:278
-#, python-format
+#, fuzzy, python-format
 msgid "Mount failed (%(retcode)s) -> %(output)s"
-msgstr ""
+msgstr "Mount failed (%(retcode)s) -> %(output)s"
 
 #: freeadmin/forms.py:136
 #, python-format
@@ -1023,19 +1013,18 @@ msgstr ""
 "point."
 
 #: freeadmin/forms.py:220
-#, fuzzy
 msgid "A file is required"
-msgstr "Dit veld is vereist"
+msgstr "Een bestand is vereist"
 
 #: freeadmin/forms.py:255 freeadmin/forms.py:279
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid address: %s"
-msgstr "Ongeldige firmware"
+msgstr "Ongeldig adres: %s"
 
 #: freeadmin/forms.py:259 freeadmin/forms.py:283
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid network: %s"
-msgstr "Ongeldige controlesom"
+msgstr "Ongeldig netwerk: %s"
 
 #: freeadmin/middleware.py:191 freeadmin/options.py:339
 #: freeadmin/options.py:517

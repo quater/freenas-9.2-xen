@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-02 02:03+0000\n"
-"PO-Revision-Date: 2013-11-30 12:39+0000\n"
-"Last-Translator: mav <mav@freebsd.org>\n"
+"PO-Revision-Date: 2013-12-17 17:59+0000\n"
+"Last-Translator: skimpax <skimpax@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1385815143.0\n"
+"X-POOTLE-MTIME: 1387303157.0\n"
 
 #: choices.py:43
 msgid "Plain"
@@ -235,15 +235,15 @@ msgstr "Dimanche"
 
 #: choices.py:165
 msgid "Unencrypted"
-msgstr ""
+msgstr "Non chiffré"
 
 #: choices.py:166
 msgid "Encrypted, no passphrase"
-msgstr ""
+msgstr "Chiffré, sans phrase de passe"
 
 #: choices.py:167
 msgid "Encrypted, with passphrase"
-msgstr ""
+msgstr "Chiffré, avec phrase de passe"
 
 #: choices.py:173
 msgid "Anonymous"
@@ -355,9 +355,8 @@ msgid "Off"
 msgstr "Désactiver"
 
 #: choices.py:304
-#, fuzzy
 msgid "lz4 (recommended)"
-msgstr "lzjb (recommandé)"
+msgstr "lz4 (recommandé)"
 
 #: choices.py:305
 msgid "gzip (default level, 6)"
@@ -373,7 +372,7 @@ msgstr "gzip (maximum, lent)"
 
 #: choices.py:308
 msgid "zle (runs of zeros)"
-msgstr ""
+msgstr "zle (séries de zéro)"
 
 #: choices.py:309
 #, fuzzy
@@ -424,7 +423,7 @@ msgstr "Lecture et écriture"
 
 #: choices.py:560
 msgid "Verify"
-msgstr ""
+msgstr "Vérifier"
 
 #: choices.py:569 choices.py:570 choices.py:571 choices.py:572
 #, python-format
@@ -490,23 +489,23 @@ msgstr "Test hors-ligne immédiat (ATA seulement)"
 
 #: choices.py:600
 msgid "9600"
-msgstr ""
+msgstr "9600"
 
 #: choices.py:601
 msgid "19200"
-msgstr ""
+msgstr "19200"
 
 #: choices.py:602
 msgid "38400"
-msgstr ""
+msgstr "38400"
 
 #: choices.py:603
 msgid "57600"
-msgstr ""
+msgstr "57600"
 
 #: choices.py:604
 msgid "115200"
-msgstr ""
+msgstr "115200"
 
 #: choices.py:633
 msgid "Rsync module"
@@ -530,7 +529,7 @@ msgstr "Silencieux"
 
 #: choices.py:659
 msgid "Fatal"
-msgstr ""
+msgstr "Fatal"
 
 #: choices.py:660 middleware/zfs.py:540 storage/models.py:136
 #: storage/models.py:760 storage/models.py:768
@@ -543,7 +542,7 @@ msgstr "Info"
 
 #: choices.py:662
 msgid "Verbose"
-msgstr ""
+msgstr "Verbeux"
 
 #: choices.py:664
 #, fuzzy
@@ -557,7 +556,7 @@ msgstr "Débogage"
 
 #: choices.py:670
 msgid "Daemon"
-msgstr ""
+msgstr "Démon"
 
 #: choices.py:671 account/models.py:159 account/models.py:237
 #: services/models.py:699 services/models.py:1790 system/models.py:375
@@ -567,7 +566,7 @@ msgstr "Utilisateur"
 
 #: choices.py:672
 msgid "Auth"
-msgstr ""
+msgstr "Authentification"
 
 #: choices.py:673
 #, fuzzy
@@ -618,8 +617,9 @@ msgid "LDAP"
 msgstr "LDAP"
 
 #: choices.py:686
+#, fuzzy
 msgid "NT4"
-msgstr ""
+msgstr "NT4"
 
 #: choices.py:687
 #, fuzzy
@@ -658,7 +658,7 @@ msgstr "Désactiver"
 
 #: choices.py:704
 msgid "data"
-msgstr ""
+msgstr "données"
 
 #: choices.py:705
 msgid "!data"
@@ -666,11 +666,11 @@ msgstr ""
 
 #: choices.py:706
 msgid "auth"
-msgstr ""
+msgstr "authentification"
 
 #: choices.py:707
 msgid "ctrl"
-msgstr ""
+msgstr "ctrl"
 
 #: choices.py:708
 msgid "ctrl+data"
@@ -725,7 +725,7 @@ msgstr "Confirmer le mot de passe"
 #: account/forms.py:68
 #, fuzzy
 msgid "Passwords do not match"
-msgstr "Secret n'est pas identique"
+msgstr "Les mots de passe ne correspondent pas"
 
 #: account/forms.py:110
 msgid "Your name cannot start with \"-\""
@@ -820,12 +820,12 @@ msgstr "Les deux mots de passe sont différents."
 
 #: account/forms.py:539
 msgid "Home directory cannot contain colons"
-msgstr ""
+msgstr "Le répertoire personnel ne peut contenir le caractère deux-points"
 
 #: account/forms.py:561
 #, fuzzy
 msgid "Home directory must end with username"
-msgstr "Le répertoire personnel n'est pas inscriptible, laisser vide"
+msgstr "Le répertoire personnel doit se terminer par le nom d'utilisateur"
 
 #: account/forms.py:570
 msgid "Home directory has to start with /mnt/ or be /nonexistent"
@@ -1011,14 +1011,14 @@ msgid "on every %(days)s"
 msgstr "Tous les %s jours"
 
 #: api/resources.py:865
-#, python-format
+#, fuzzy, python-format
 msgid "From %(begin)s through %(end)s, %(repeat)s"
-msgstr ""
+msgstr "De %(begin)s à %(end)s, %(repeat)s"
 
 #: common/system.py:278
 #, python-format
 msgid "Mount failed (%(retcode)s) -> %(output)s"
-msgstr ""
+msgstr "Échec du montage (%(retcode)s) -> %(output)s"
 
 #: freeadmin/forms.py:136
 #, python-format
@@ -1037,7 +1037,7 @@ msgstr "Le chemin doit résider dans le point de montage d'un volume"
 #: freeadmin/forms.py:220
 #, fuzzy
 msgid "A file is required"
-msgstr "Ce champ est obligatoire"
+msgstr "Un fichier est requis"
 
 #: freeadmin/forms.py:255 freeadmin/forms.py:279
 #, python-format
@@ -1172,11 +1172,11 @@ msgstr "Mettre à jour le module"
 
 #: jails/admin.py:196
 msgid "Start"
-msgstr ""
+msgstr "Démarrer"
 
 #: jails/admin.py:197
 msgid "Stop"
-msgstr ""
+msgstr "Arrêter"
 
 #: jails/admin.py:232 system/models.py:604
 #: templates/freeadmin/generic_model_edit.html:97
@@ -1193,11 +1193,11 @@ msgstr "Nom"
 
 #: jails/admin.py:261 jails/models.py:346
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: jails/admin.py:267
 msgid "Instances"
-msgstr ""
+msgstr "Instances"
 
 #: jails/admin.py:287 jails/forms.py:655
 msgid "Mounted?"
@@ -1205,7 +1205,7 @@ msgstr "Monté ?"
 
 #: jails/forms.py:88
 msgid "type"
-msgstr ""
+msgstr "type"
 
 #: jails/forms.py:92
 msgid "32 bit"
@@ -1243,7 +1243,7 @@ msgstr "Non disponible"
 
 #: jails/forms.py:651
 msgid "Create destination directory if it does not exist"
-msgstr ""
+msgstr "Créer le répertoire de destination s'il n'existe pas encore"
 
 #: jails/forms.py:693
 msgid "This shouldn't happen, but the jail could not be found"
@@ -1290,8 +1290,9 @@ msgid "IPv4 bridge address"
 msgstr "Adresse IPv4"
 
 #: jails/models.py:100
+#, fuzzy
 msgid "IPv4 bridge aliases"
-msgstr ""
+msgstr "Alias du pont IPv4"
 
 #: jails/models.py:107
 #, fuzzy
@@ -1315,7 +1316,7 @@ msgstr "Adresse IPv6"
 
 #: jails/models.py:131
 msgid "IPv6 bridge aliases"
-msgstr ""
+msgstr "Alias du pont IPv6"
 
 #: jails/models.py:138
 #, fuzzy
@@ -1324,7 +1325,7 @@ msgstr "Passerelle par défaut IPv6"
 
 #: jails/models.py:144
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 #: jails/models.py:224
 #, fuzzy, python-format
@@ -1468,11 +1469,11 @@ msgstr "Impossible de supprimer le module."
 #: jails/utils.py:640
 #, python-format
 msgid "Failed to install plugin: %s"
-msgstr ""
+msgstr "Échec d'installation du greffon : %s"
 
 #: jails/utils.py:679
 msgid "You need to create a ZFS volume to proceed!"
-msgstr ""
+msgstr "Vous devez au préalable créer un volume ZFS !"
 
 #: jails/utils.py:694
 #, fuzzy, python-format
@@ -1510,8 +1511,9 @@ msgid "Jail template successfully edited."
 msgstr "Jeu de données modifié avec succès."
 
 #: middleware/notifier.py:2874
+#, fuzzy
 msgid "No RPC Token!"
-msgstr ""
+msgstr "Aucun jeton RPC !"
 
 #: middleware/zfs.py:510 storage/models.py:723
 msgid "Error getting total space"
@@ -1527,11 +1529,11 @@ msgstr "Erreur en récupérant l'espace utilisé"
 
 #: middleware/zfs.py:609
 msgid "In Progress"
-msgstr ""
+msgstr "En cours"
 
 #: middleware/zfs.py:633
 msgid "Completed"
-msgstr ""
+msgstr "Terminé"
 
 #: middleware/zfs.py:644
 #, fuzzy
@@ -1543,8 +1545,9 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 #: middleware/zfs.py:654
+#, fuzzy
 msgid "None requested"
-msgstr ""
+msgstr "Aucun requis"
 
 #: network/admin.py:39
 #, fuzzy
@@ -1578,16 +1581,16 @@ msgstr ""
 
 #: network/forms.py:128
 msgid "Only one interface can be used for DHCP"
-msgstr ""
+msgstr "Une seule interface peut être utilisée pour DHCP"
 
 #: network/forms.py:141
 msgid "Only one interface can have IPv6 autoconfiguration enabled"
-msgstr ""
+msgstr "Une seule interface peut avoir l'auto-configuration IPv6 activée"
 
 #: network/forms.py:175 network/forms.py:584
 #, python-format
 msgid "The network %s is already in use by another NIC."
-msgstr ""
+msgstr "Le réseau %s est déjà utilisé par une autre interface réseau."
 
 #: network/forms.py:208
 msgid "You have to specify IPv4 address as well"
@@ -1648,8 +1651,9 @@ msgid "Must fill out nameserver 1 before filling out nameserver 2"
 msgstr "Veuillez compléter le serveur de noms 1 avant le 2"
 
 #: network/forms.py:343
+#, fuzzy
 msgid "You need a domain, e.g. hostname.domain"
-msgstr ""
+msgstr "Indiquer un domaine, ex. hostname.domain"
 
 #: network/forms.py:357
 msgid "Parent Interface"
@@ -2706,8 +2710,9 @@ msgid ""
 msgstr ""
 
 #: services/models.py:307
+#, fuzzy
 msgid "mountd(8) bind port"
-msgstr ""
+msgstr "Port de bind pour mountd(8)"
 
 #: services/models.py:312
 msgid ""
@@ -3217,7 +3222,7 @@ msgstr "Maître local"
 
 #: services/models.py:951
 msgid "Slave"
-msgstr ""
+msgstr "Esclave"
 
 #: services/models.py:953
 #, fuzzy
@@ -3422,6 +3427,8 @@ msgid ""
 "For local users, only allow access to user home directory unless the user is "
 "a member of group wheel."
 msgstr ""
+"Pour les utilisateurs locaux, autorise uniquement l'accès à leur répertoire "
+"personnel sauf s'ils sont membre du groupe wheel."
 
 #: services/models.py:1137
 msgid "Require IDENT Authentication"
@@ -3531,7 +3538,7 @@ msgstr "Activer SSL/TLS"
 
 #: services/models.py:1199
 msgid "TLS policy"
-msgstr ""
+msgstr "Règles TLS"
 
 #: services/models.py:1202
 msgid "TLS allow client renegotiations"
@@ -3715,8 +3722,9 @@ msgid ""
 msgstr ""
 
 #: services/models.py:1354
+#, fuzzy
 msgid "SFTP Log Facility"
-msgstr ""
+msgstr "Service de logs SFTP"
 
 #: services/models.py:1358
 msgid ""
@@ -3744,7 +3752,7 @@ msgstr "Nom du contrôleur de domaine"
 
 #: services/models.py:1437 services/models.py:1533
 msgid "Hostname of the domain controller to use."
-msgstr ""
+msgstr "Nom d'hôte du contrôleur de domaine à utiliser."
 
 #: services/models.py:1441 services/models.py:1487
 msgid "NetBIOS Name"
@@ -3817,7 +3825,7 @@ msgstr ""
 
 #: services/models.py:1526
 msgid "Use default domain"
-msgstr ""
+msgstr "Utiliser le domaine par défaut"
 
 #: services/models.py:1527
 msgid "Set this if you want to use the default domain for users and groups."
@@ -3838,15 +3846,15 @@ msgstr "Fichier Keytab pour Kerberos"
 
 #: services/models.py:1545
 msgid "Hostname of the kerberos server to use."
-msgstr ""
+msgstr "Nom d'hôte du serveur Kerberos à utiliser."
 
 #: services/models.py:1550
 msgid "Kerberos Password Server"
-msgstr ""
+msgstr "Serveur de mots de passe Kerberos"
 
 #: services/models.py:1551
 msgid "Hostname of the kerberos password server to use."
-msgstr ""
+msgstr "Nom d'hôte du serveur de mots de passe Kerberos à utiliser."
 
 #: services/models.py:1555
 #, fuzzy
