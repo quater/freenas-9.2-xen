@@ -394,3 +394,11 @@ device		virtio_blk
 device		virtio_balloon
 device		vtnet
 device		virtio_scsi
+
+options         NO_ADAPTIVE_MUTEXES
+options         NO_ADAPTIVE_RWLOCKS
+options         NO_ADAPTIVE_SX
+
+# Xen HVM support
+options         XENHVM
+device          xenpci

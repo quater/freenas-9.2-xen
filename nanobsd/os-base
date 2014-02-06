@@ -196,6 +196,8 @@ if is_truenas ; then
 	add_port_with_repo "${NAS_PORTS}" sysutils/zfsd LOCALBASE=/
 fi
 
+add_port sysutils/xen-tools
+add_port sysutils/xe-guest-utilities
 add_port textproc/libxml2
 add_port devel/libffi
 add_port archivers/lzo2
