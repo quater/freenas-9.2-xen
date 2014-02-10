@@ -1,7 +1,7 @@
 Compile FreeNAS 9.2 with Xen Support
 ====================================
 
-This repository is a copy of the FreeNAS **9.2.0-RELEASE** branch with the changes outlined with the below two posts.
+This repository is a copy of the FreeNAS **9.2.0-RELEASE** branch with the changes outlined by the below two posts.
 
 [http://forums.freenas.org/threads/how-i-got-a-xenhvm-kernal-and-xen-tools-working-in-freenas.15287/](http://forums.freenas.org/threads/how-i-got-a-xenhvm-kernal-and-xen-tools-working-in-freenas.15287/)
 [http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/](http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/)
