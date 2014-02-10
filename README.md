@@ -22,19 +22,16 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
    * Note: Amazon provides an SSH command to copy and paste. Make sure you change it to use the user name **ec2-user** rather than root! Otherwise you won't be able to connect.
 
 3. Switch to root
-
 ```
 $ su root
 ```
 
 4. Check the */var/log/messages* file to figure out what device name the second disk has. In my instance it was *xbd5*
-
 ```
 $ tail -n 1000 /var/log/messages | grep "Virtual Block Device"
 ```
 
 5. Enable ZFS and create a ZFS pool
-
 ```
 $ echo 'zfs_enable="YES"' >> /etc/rc.conf
 $ service zfs start
@@ -43,25 +40,21 @@ $ cd /ZFSPool/
 ```
 
 6. Create a new directory on your ZFS volume
-
 ```
 $ mkdir /ZFSPool/myfreenasbuild
 ```
 
 7. To prevent that network problems botch your machine, while installing ports and more importantly while compiling, use *screen* (see details [here](https://forums.freebsd.org/viewtopic.php?&t=3599)).
-
 ```
 $ pkg_add -r screen
 ```
 
 8. Start *screen* and then hit enter. If your terminal connection drops now, you don't need to worry as it will not break the compilation.
-
 ```
 $ screen
 ```
 
 9. Run the following commands to create a build environment. Note: There are a few dependencies for this, but just accept the defaults as it goes and you’ll be right.
-
 ```
 $ portsnap fetch extract
 $ pkg_add -r git
@@ -71,31 +64,26 @@ $ pkg_add -r screen
 ```
    
 10. Change into the build directory on your ZFS volume
-
 ```
 $ cd mkdir /ZFSPool/myfreenasbuild
 ```
 
 11. Download the repository
-
 ```
 $ git clone -b xenserver https://github.com/topler/freenas-9.2-xen.git
 ```
 
 12. Change into the downloaded directory
-
 ```
 $ cd freenas-9.2-xen
 ```
 
 13. Make external
-
 ```
 $ make git-external
 ```
 
 14. Build
-
 ```
 $ make release
 ```
@@ -111,7 +99,6 @@ If you used a *m3.xlarge* instance size, the entire process will take just over 
 3. On your local machine, extract the *FreeNAS-9.2.0-RELEASE-xen-x64.img.xz* file
 
 4. Convert the *img* to *raw*
-
 ```
 $ qemu-img convert -O raw FreeNAS-9.2.0-RELEASE-xen-x64.img FreeNAS-9.2.0-RELEASE-xen-x64.raw
 ```
