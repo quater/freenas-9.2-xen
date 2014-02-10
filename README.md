@@ -1,70 +1,88 @@
 Compile FreeNAS 9.2 with Xen support
 ====================================
 
-This repository is based on the following two posts.
+This repository is a copy of the FreeNAS **9.2.0-RELEASE** branch with the changes outlined with the below two posts.
 
 [http://forums.freenas.org/threads/how-i-got-a-xenhvm-kernal-and-xen-tools-working-in-freenas.15287/](http://forums.freenas.org/threads/how-i-got-a-xenhvm-kernal-and-xen-tools-working-in-freenas.15287/)
 [http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/](http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/)
 
-## Important Note:
+## Steps
 
-* This repository is a copy of the **9.2.0-RELEASE** FreeNAS branch with the changes outlined with the above posts.
-* In my instance I have not been able to successfully build FreeNAS 9.2 with Xen tools due to an checksum error with the **ataidle** package while building. 
-I believe this is due to a problem with my build environment rather due to the Xen related changes present in this repository, thus should not affect 
-everyone.
+Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the below steps but it somehow failed due to some wired errors with the "ataidle" package. Eventually I succeeded by using a FreeBSD 9.2 instance on Amazon EC2. In the light of this, I recommend using an Amazon EC2 instance if you encounter wired build issues. Therefore the instructions below presume you are using EC2.
 
-## Steps 
+[FreeBSD on EC2](http://www.daemonology.net/freebsd-on-ec2/)
 
-* Create machine from scratch by installing FreeBSD 9.2 which has two disks. First disk for the OS (10 GB) and the second disk for the ZFS (20 GB)
+1. Go to [http://www.daemonology.net/freebsd-on-ec2/](http://www.daemonology.net/freebsd-on-ec2/) and get a 64x machine of FreeBSD 9.2
+   * I recommend to use *m3.xlarge* as instance size as this is just enough memory so it won't use the swap
+   * Give this instance 10GB for the main disk
+   * Add an additional disk/ EBS volume of 20GB
 
-* Create a ZFS pool on the second disk
+2. On EC2 boot the FreeBSD 9.2 instance and connect via SSH
+   * Note: The SSH user name has to be **ec2-user**
 
-```$ echo 'zfs_enable="YES"' >> /etc/rc.conf```
+3. Switch to root
+   ```su root```
 
-```$ service zfs start```
+4. Check the */var/log/messages* file to figure out what device name the second disk has. In my instance it was *xbd5*
+   ```tail -n 1000 /var/log/messages | grep "Virtual Block Device"```
 
-```$ zpool create ZFSPool /dev/ada1```
+5. Enable ZFS and create a ZFS pool
+   ```echo 'zfs_enable="YES"' >> /etc/rc.conf```
+   ```service zfs start```
+   ```zpool create ZFSPool /dev/xbd5```
+   ```cd /ZFSPool/```
 
-* Create a new directory on your ZFS volume
+6. Create a new directory on your ZFS volume
+   ```mkdir /ZFSPool/myfreenasbuild```
 
-```$ mkdir /ZFSPool/myfreenasbuild```
+7. To prevent that network problems botch your machine, while installing ports and more importantly while compiling, use *screen* (see details [here](https://forums.freebsd.org/viewtopic.php?&t=3599)).
+   ```pkg_add -r screen```
 
-* Run the following commands to get a build environment
+8. Start *screen* and then hit enter
+   ```screen```
 
-```$ portsnap fetch extract```
+   Note: If your terminal connection drops now, you don't need to worry as it will not break the compilation.
 
-```$ cd /usr/ports/devel/git && make depends install```
+9. Run the following commands to create a build environment. Note: There are a few dependencies for this, but just accept the defaults as it goes and you’ll be right.
+   ```portsnap fetch extract```
+   ```pkg_add -r git```
+   ```pkg_add -r cdrtools```
+   ```pkg_add -r pxz```
+   ```pkg_add -r screen```
+   
+10. Change into the build directory on your ZFS volume
+   ```cd mkdir /ZFSPool/myfreenasbuild```
 
-```$ cd /usr/ports/sysutils/cdrtools  && make depends install```
+11. Download the repository
+   ```git clone -b xenserver https://github.com/topler/freenas-9.2-xen.git```
 
-```$ cd /usr/ports/archivers/pxz && make depends install```
+12. Change into the downloaded directory
+   ```cd freenas-9.2-xen```
 
-* Change into the directory on your ZFS volume
+13. Make external
+   ```make git-external```
 
-```$ cd mkdir /ZFSPool/myfreenasbuild```
+14. Build
+   ```make release```
 
-* Download the repository
+If you used a *m3.xlarge* instance size, the entire process will take just over 4 hours.
 
-```$ git clone -b xenserver https://github.com/topler/freenas-9.2-xen.git```
+15. If the build was successful, you should have the *.iso and *.img files located under */ZFSPool/myfreenasbuild/freenas-9.2-xen/release_stage/.
 
-* Change into the repository
+16. Download the contents of the *release_stage* directory onto your local machine by using SCP
 
-```$ cd freenas-9.2-xen```
+17. On your local machine, extract the *FreeNAS-9.2.0-RELEASE-xen-x64.img.xz* file
 
-* Make external
+18. Convert the *img* to *raw*
+   ```qemu-img convert -O raw FreeNAS-9.2.0-RELEASE-xen-x64.img FreeNAS-9.2.0-RELEASE-xen-x64.raw```
 
-```$ make git-external```
+19. Use the *vhd-tool* to convert it to *vhd*
+    Note: Compiling *vhd-tool* is not straight forward. So if you have a Windows machine, simply use the *vhd-tool* provided by Microsoft (i.e. [vhdtool](http://archive.msdn.microsoft.com/vhdtool))
 
-* Build
+20. Import the resulting *vhd* file onto your XenServer.
 
-```$ make release```
+# Known Issues
 
-Depending on your environment, this build may take several hours to complete. If the build fails due to getting a checksum error with the **ataidle** 
-package, you can try to run the build without checksum (i.e. potential security risk).
-
-```$ make NO_CHECKSUM=yes release```
-
-If the build was successful, you should have the *.iso located under */ZFSPool/myfreenasbuild/freenas-9.2-xen/release_stage/x64*.
-You can then follow the steps provided with 
-[http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/](http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/) to install FreeNAS on 
-Xenserver.
+Due to some bugs with the FreeBSD xen-server tools;
+* Shutdown will only halt the machine rather than powering off.
+* Suspend will successfully suspend, but when resumed it causes the machine to reboot.
