@@ -6,7 +6,7 @@ This repository is a copy of the FreeNAS **9.2.0-RELEASE** branch with the chang
 [http://forums.freenas.org/threads/how-i-got-a-xenhvm-kernal-and-xen-tools-working-in-freenas.15287/](http://forums.freenas.org/threads/how-i-got-a-xenhvm-kernal-and-xen-tools-working-in-freenas.15287/)
 [http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/](http://mywiredhouse.net/blog/building-freenas-xen-pvhvm-support/)
 
-## Steps
+## Steps to Compile
 
 Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the below steps but it somehow failed due to some wired errors with the "ataidle" package. Eventually I succeeded by using a FreeBSD 9.2 instance on Amazon EC2. In the light of this, I recommend using an Amazon EC2 instance if you encounter wired build issues. Therefore the instructions below presume you are using EC2.
 
@@ -38,10 +38,9 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
 7. To prevent that network problems botch your machine, while installing ports and more importantly while compiling, use *screen* (see details [here](https://forums.freebsd.org/viewtopic.php?&t=3599)).
    ```pkg_add -r screen```
 
-8. Start *screen* and then hit enter
+8. Start *screen* and then hit enter.
    ```screen```
-
-   Note: If your terminal connection drops now, you don't need to worry as it will not break the compilation.
+   If your terminal connection drops now, you don't need to worry as it will not break the compilation.
 
 9. Run the following commands to create a build environment. Note: There are a few dependencies for this, but just accept the defaults as it goes and you’ll be right.
    ```portsnap fetch extract```
@@ -65,24 +64,25 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
 14. Build
    ```make release```
 
-If you used a *m3.xlarge* instance size, the entire process will take just over 4 hours.
+## Steps to Convert Image
 
-15. If the build was successful, you should have the *.iso and *.img files located under */ZFSPool/myfreenasbuild/freenas-9.2-xen/release_stage/.
+If you used a *m3.xlarge* instance size, the entire process will take just over 4 hours
 
-16. Download the contents of the *release_stage* directory onto your local machine by using SCP
+1. If the build was successful, you should have the *.iso and *.img files located under */ZFSPool/myfreenasbuild/freenas-9.2-xen/release_stage/
 
-17. On your local machine, extract the *FreeNAS-9.2.0-RELEASE-xen-x64.img.xz* file
+2. Download the contents of the *release_stage* directory onto your local machine by using SCP
 
-18. Convert the *img* to *raw*
+3. On your local machine, extract the *FreeNAS-9.2.0-RELEASE-xen-x64.img.xz* file
+
+4. Convert the *img* to *raw*
    ```qemu-img convert -O raw FreeNAS-9.2.0-RELEASE-xen-x64.img FreeNAS-9.2.0-RELEASE-xen-x64.raw```
 
-19. Use the *vhd-tool* to convert it to *vhd*
-    Note: Compiling *vhd-tool* is not straight forward. So if you have a Windows machine, simply use the *vhd-tool* provided by Microsoft (i.e. [vhdtool](http://archive.msdn.microsoft.com/vhdtool))
+5. Use the *vhd-tool* to convert it to *vhd*. Note: Compiling *vhd-tool* is not straight forward. So if you have a Windows machine, simply use the *vhd-tool* provided by Microsoft (i.e. [vhdtool](http://archive.msdn.microsoft.com/vhdtool))
 
-20. Import the resulting *vhd* file onto your XenServer.
+6. Import the resulting *vhd* file onto your XenServer.
 
-# Known Issues
+## Known Issues
 
-Due to some bugs with the FreeBSD xen-server tools;
-* Shutdown will only halt the machine rather than powering off.
+Due to some bugs with the FreeBSD xen-tools;
+* Shutdown will only halt the machine rather than powering it off.
 * Suspend will successfully suspend, but when resumed it causes the machine to reboot.
