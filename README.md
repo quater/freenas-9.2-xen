@@ -12,7 +12,7 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
 
 ## Steps to Compile
 
-1. Go to [http://www.daemonology.net/freebsd-on-ec2/](http://www.daemonology.net/freebsd-on-ec2/) and get a FreeBSD 9.2 64x macchine.
+1. Go to [http://www.daemonology.net/freebsd-on-ec2/](http://www.daemonology.net/freebsd-on-ec2/) and get a FreeBSD 9.2 64x machine.
    * I recommend to use the instance size *m3.xlarge* as it has just enough memory so it won't use the swap.
    * Give this instance 10GB for the main disk.
    * Add an additional disk/ EBS volume of 20GB.
@@ -22,7 +22,7 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
    * Note: Amazon provides an SSH command to copy and paste. Make sure you change it to use the user name **ec2-user** rather than root! Otherwise you won't be able to connect.
 
 3. Switch to root
-   ```su root```
+    su root
 
 4. Check the */var/log/messages* file to figure out what device name the second disk has. In my instance it was *xbd5*
    ```tail -n 1000 /var/log/messages | grep "Virtual Block Device"```
