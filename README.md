@@ -22,6 +22,7 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
    * Note: Amazon provides an SSH command to copy and paste. Make sure you change it to use the user name **ec2-user** rather than root! Otherwise you won't be able to connect.
 
 3. Switch to root
+
     su root
 
 4. Check the */var/log/messages* file to figure out what device name the second disk has. In my instance it was *xbd5*
