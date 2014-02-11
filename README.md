@@ -8,7 +8,7 @@ This repository is a copy of the FreeNAS **9.2.0-RELEASE** branch with the chang
 
 ## Preface
 
-Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the below steps but it somehow failed due to some wired errors with the "ataidle" port. Eventually I succeeded by using a FreeBSD 9.2 instance on Amazon EC2. In the light of this, I recommend using an Amazon EC2 instance (i.e. [FreeBSD on EC2](http://www.daemonology.net/freebsd-on-ec2/)) if you encounter wired build issues. Therefore the instructions below presume you are using EC2.
+Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the below steps but it somehow failed due to some wired errors with the "ataidle" port. Eventually I succeeded by using a FreeBSD 9.2 instance on Amazon EC2. In the light of this, I recommend using an Amazon EC2 instance (i.e. [FreeBSD on EC2](http://www.daemonology.net/freebsd-on-ec2/)) if you encounter wired build issues. Therefore the instructions below presume that EC2 is used.
 
 ## Steps to Compile
 
@@ -87,25 +87,22 @@ Initially, I installed a FreeBSD 9.2 machine on my XenServer to perform the belo
    ```
    $ make release
    ```
+If you used a *m3.xlarge* instance size, the entire process will take just over 4 hours. If the build was successful, you should have the *.iso and *.img files located under */ZFSPool/myfreenasbuild/freenas-9.2-xen/release_stage/*
 
 ## Steps to Convert Image
 
-If you used a *m3.xlarge* instance size, the entire process will take just over 4 hours.
+1. Download the contents of the *release_stage* directory onto your local machine (e.g SCP)
 
-1. If the build was successful, you should have the *.iso and *.img files located under */ZFSPool/myfreenasbuild/freenas-9.2-xen/release_stage/
+2. On your local machine, extract the *FreeNAS-9.2.0-RELEASE-xen-x64.img.xz* file
 
-2. Download the contents of the *release_stage* directory onto your local machine by using SCP
-
-3. On your local machine, extract the *FreeNAS-9.2.0-RELEASE-xen-x64.img.xz* file
-
-4. Convert the *img* to *raw*
+3. Convert the *img* to *raw*
    ```
    $ qemu-img convert -O raw FreeNAS-9.2.0-RELEASE-xen-x64.img FreeNAS-9.2.0-RELEASE-xen-x64.raw
    ```
 
-5. Use the *vhd-tool* to convert it to *vhd*. Note: Compiling *vhd-tool* is not straight forward. So if you have a Windows machine, simply use the *vhd-tool* provided by Microsoft (i.e. [vhdtool](http://archive.msdn.microsoft.com/vhdtool))
+4. Use the *vhd-tool* to convert it to *vhd*. Note: Compiling *vhd-tool* is not straight forward. So if you have a Windows machine at hand, simply use the *vhd-tool* provided by Microsoft (i.e. [vhdtool](http://archive.msdn.microsoft.com/vhdtool))
 
-6. Import the resulting *vhd* file onto your XenServer.
+5. Import the resulting *vhd* file onto your XenServer.
 
 ## Known Issues
 
